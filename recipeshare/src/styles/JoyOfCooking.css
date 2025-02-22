@@ -1,0 +1,66 @@
+
+.joy-of-cooking {
+  padding: 50px 0;
+  background-image: linear-gradient(to right, #e4afcb 0%, #b8cbb8 0%, #b8cbb8 0%, #e2c58b 30%, #c2ce9c 64%, #7edbdc 100%);
+}
+
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-body {
+  padding: 20px;
+  background-image: linear-gradient(to right, #e4afcb 0%, #b8cbb8 0%, #b8cbb8 0%, #e2c58b 30%, #c2ce9c 64%, #7edbdc 100%);
+}
+
+
+
+
+
+@media (max-width: 1024px) {
+  .joy-of-cooking {
+      padding: 40px 0;
+  }
+
+  .card-body {
+      padding: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .joy-of-cooking {
+      padding: 30px 0;
+  }
+
+  .card {
+      margin-bottom: 20px;
+  }
+
+  .card-body {
+      padding: 16px;
+
+  }
+}
+
+@media (max-width: 480px) {
+  .joy-of-cooking {
+      padding: 20px 0;
+  }
+
+  .card {
+      margin-bottom: 15px;
+  }
+
+  .card-body {
+      padding: 12px;
+  }
+}
