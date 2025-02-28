@@ -21,4 +21,4 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
 app.use("/api", authRoutes);       // /api/register, /api/login
 app.use("/recipes", recipeRoutes); // /recipes, /recipes/:id/like, etc
 
-module.exports = app;
+app.listen(5000, () => console.log("Server running on port 5000"));
