@@ -18,7 +18,7 @@ exports.addRecipe = async (req, res) => {
   try {
     const newRecipe = new Recipe({
       name,
-      ingredients: ingredients.split(","),
+      ingredients: Array.isArray(ingredients) ? ingredients : ingredients.split(","),
       instructions,
       image: imagePath,
     });
@@ -60,15 +60,13 @@ exports.addComment = async (req, res) => {
     const recipe = await Recipe.findById(id);
     if (!recipe) return res.status(404).send("Recipe not found.");
 
-    const hasCommented = recipe.comments.some((comment) =>
-      comment.userId.equals(userId)
-    );
-    if (hasCommented) return res.status(403).send("Already commented.");
-
+    // Allow multiple comments by removing the "Already commented" check
     recipe.comments.push({ userId, text });
     await recipe.save();
+    
     res.send("Comment added!");
   } catch (err) {
     res.status(500).send("Error adding comment.");
   }
 };
+
