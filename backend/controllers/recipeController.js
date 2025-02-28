@@ -60,7 +60,7 @@ exports.addComment = async (req, res) => {
     const recipe = await Recipe.findById(id);
     if (!recipe) return res.status(404).send("Recipe not found.");
 
-    // Allow multiple comments by removing the "Already commented" check
+    
     recipe.comments.push({ userId, text });
     await recipe.save();
     
