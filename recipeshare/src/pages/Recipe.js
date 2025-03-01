@@ -6,7 +6,7 @@ import "../styles/Recipe.css";
 
 const Recipe = () => {
   const navigate = useNavigate();
-  const API_URL = "http://localhost:5000";
+  const API_URL = process.env.REACT_APP_API_URL;  // const API_URL = process.env.RECIPE_API_URL;
   const [recipes, setRecipes] = useState([]);
   const [newRecipe, setNewRecipe] = useState({ 
     name: "", 
@@ -131,7 +131,7 @@ const Recipe = () => {
                 src={API_URL + recipe.image}
                 alt={recipe.name}
                 className="recipe-image"
-                onError={(e) => (e.target.src = "https://via.placeholder.com/150")}
+                onError={(e) => (e.target.src = "")}
               />
             )}
 

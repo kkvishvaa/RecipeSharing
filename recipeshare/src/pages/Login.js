@@ -8,12 +8,13 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLogin, setIsLogin] = useState(true); 
+  const API_URL =process.env.REACT_APP_API_URL;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     const endpoint = isLogin ? "login" : "register"; 
-    const url = `http://localhost:5000/api/${endpoint}`;
+    const url = `${API_URL}/api/${endpoint}`;
 
     const response = await fetch(url, {
       method: "POST",
