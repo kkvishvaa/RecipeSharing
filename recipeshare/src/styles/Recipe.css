@@ -86,11 +86,15 @@
   background: white;
   border-radius: 12px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .recipe-form {
   display: grid;
   gap: 1.5rem;
+  grid-template-columns: 1fr;
 }
 
 .form-group {
@@ -106,7 +110,7 @@
 
 .image-preview img {
   width: 100%;
-  max-width: 300px;
+  max-width: 100%;
   height: auto;
   border-radius: 8px;
   margin-top: 1rem;
@@ -148,4 +152,16 @@
 .likes-count {
   font-weight: bold;
   color: #d32f2f;
+}
+
+@media (min-width: 600px) {
+  .recipe-form {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 400px) {
+  .add-recipe-section {
+    padding: 1rem;
+  }
 }

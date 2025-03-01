@@ -26,7 +26,7 @@ const Login = () => {
     if (response.ok) {
       if (isLogin) {
         alert("Login successful!");
-        Cookies.set("token", data.token, { expires: 7, secure: true }); 
+        Cookies.set("token", data.token, {secure: true }); 
         navigate("/recipe");
       } else {
         alert("Registration successful! Please login.");
